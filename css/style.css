@@ -389,6 +389,10 @@ body {
     margin-bottom: 25px;
 }
 
+.hero-line {
+    display: block;
+}
+
 .gradient-text {
     background: var(--gradient-primary);
     -webkit-background-clip: text;
@@ -2052,8 +2056,12 @@ section {
         margin-bottom: 20px;
         text-align: center;
         width: 100%;
-        padding: 0 10px;
+        padding: 0 5px;
         box-sizing: border-box;
+    }
+    
+    .hero-line {
+        display: block;
         word-wrap: break-word;
         overflow-wrap: break-word;
     }
@@ -2062,6 +2070,7 @@ section {
         white-space: normal !important;
         word-break: normal !important;
         display: inline !important;
+        max-width: 100%;
     }
     
     .hero-description {
@@ -2175,13 +2184,13 @@ section {
     }
     
     .hero-content {
-        padding: 0 20px;
+        padding: 0 15px;
     }
     
     .hero-title {
-        font-size: 6vw;
+        font-size: 6.5vw;
         line-height: 1.3;
-        padding: 0 8px;
+        padding: 0 5px;
     }
     
     .hero-description {
