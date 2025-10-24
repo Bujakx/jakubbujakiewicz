@@ -2058,6 +2058,12 @@ section {
         overflow-wrap: break-word;
     }
     
+    .gradient-text {
+        white-space: normal !important;
+        word-break: normal !important;
+        display: inline !important;
+    }
+    
     .hero-description {
         font-size: 16px;
         line-height: 1.6;
