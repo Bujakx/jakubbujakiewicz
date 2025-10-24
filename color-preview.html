@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palety Kolorów - Podgląd</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        
+        .palettes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .palette {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .palette:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 48px rgba(0,0,0,0.15);
+        }
+        
+        .palette-header {
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .palette-number {
+            font-size: 14px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+        
+        .palette-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .palette-desc {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .palette-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            background: #f0f0f0;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .colors {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .color {
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .color-code {
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        .demo-section {
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .demo-button {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-card {
+            width: 100%;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .recommended {
+            position: relative;
+        }
+        
+        .recommended::before {
+            content: '⭐ POLECAM';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffd700;
+            color: #000;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Palety Kolorów dla Twojej Strony</h1>
+        <p class="subtitle">Wybierz swoją ulubioną kombinację</p>
+        
+        <div class="palettes">
+            
+            <!-- OBECNA -->
+            <div class="palette">
+                <div class="palette-header">
+                    <div class="palette-number">Obecna</div>
+                    <div class="palette-name">Neon Green + Orange</div>
+                    <div class="palette-desc">Energetyczny, kontrastowy</div>
+                    <div class="palette-tags">
+                        <span class="tag">Energiczny</span>
+                        <span class="tag">Jaskrawy</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #0ed145;">
+                        Primary
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #ff6b35;">
+                        Accent
+                        <div class="color-code">#ff6b35</div>
+                    </div>
+                    <div class="color" style="background: #181717;">
+                        Dark
+                        <div class="color-code">#0a0e27</div>
+                    </div>
+                    <div class="color" style="background: #222222;">
+                        Dark Light
+                        <div class="color-code">#141930</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: #000000;">
+                    <button class="demo-button" style="background: #0ed145; color: #000;">Rozpocznij Teraz</button>
+                    <div class="demo-card" style="background: rgba(255,107,53,0.1); border: 1px solid #ff6b35; color: #fff;">
+                        Przykładowa karta z akcentem
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPCJA 1 UPGRADED -->
+            <div class="palette">
+                <div class="palette-header">
+                    <div class="palette-number">Opcja 1 🔥 UPGRADED</div>
+                    <div class="palette-name">Neon Gaming+ Balance</div>
+                    <div class="palette-desc">Neon + Elegancja + Złote akcenty</div>
+                    <div class="palette-tags">
+                        <span class="tag">Neon</span>
+                        <span class="tag">Premium</span>
+                        <span class="tag">Balance</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #0ed145;">
+                        Neon Green
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #ffffff; color: #000;">
+                        White Accent
+                        <div class="color-code">#ffffff</div>
+                    </div>
+                    <div class="color" style="background: linear-gradient(135deg, #ffd700, #ffed4e);">
+                        Gold Detail
+                        <div class="color-code">#ffd700</div>
+                    </div>
+                    <div class="color" style="background: #1a1a1a;">
+                        Soft Black
+                        <div class="color-code">#1a1a1a</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);">
+                    <button class="demo-button" style="background: linear-gradient(135deg, #0ed145, #2ef95d); color: #000; box-shadow: 0 0 20px rgba(14, 209, 69, 0.4);">Rozpocznij Teraz</button>
+                    <button class="demo-button" style="background: #ffffff; color: #000; margin-top: 5px;">Dowiedz się więcej</button>
+                    <div class="demo-card" style="background: rgba(26, 26, 26, 0.95); border: 1px solid #0ed145; position: relative; color: #fff;">
+                        <div style="position: absolute; top: -10px; right: 20px; background: linear-gradient(135deg, #ffd700, #ffed4e); color: #000; padding: 4px 14px; border-radius: 20px; font-size: 11px; font-weight: 700;">🏆 BESTSELLER</div>
+                        <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px; color: #ffffff;">Trening Premium</div>
+                        <div style="color: #b0b0b0; font-size: 14px; margin-bottom: 12px;">Neonowa energia ⚡ + Elegancja 💎</div>
+                        <div style="color: #0ed145; font-size: 13px; font-weight: 500;">✓ Gwarancja jakości ✓ Szybkie efekty ✓ Premium support</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPCJA 2 - RECOMMENDED -->
+            <div class="palette recommended">
+                <div class="palette-header">
+                    <div class="palette-number">Opcja 2</div>
+                    <div class="palette-name">Energy Charcoal</div>
+                    <div class="palette-desc">Elegancki, premium, Tesla-style</div>
+                    <div class="palette-tags">
+                        <span class="tag">Premium</span>
+                        <span class="tag">Elegancki</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #0ed145;">
+                        Primary
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #00ff7f;">
+                        Accent
+                        <div class="color-code">#00ff7f</div>
+                    </div>
+                    <div class="color" style="background: #0a0a0a;">
+                        Dark
+                        <div class="color-code">#0a0a0a</div>
+                    </div>
+                    <div class="color" style="background: #1a1a1a;">
+                        Dark Light
+                        <div class="color-code">#1a1a1a</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: #0a0a0a;">
+                    <button class="demo-button" style="background: #0ed145; color: #000;">Rozpocznij Teraz</button>
+                    <div class="demo-card" style="background: rgba(0,255,127,0.1); border: 1px solid #00ff7f; color: #fff;">
+                        Przykładowa karta z akcentem
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPCJA 3 -->
+            <div class="palette">
+                <div class="palette-header">
+                    <div class="palette-number">Opcja 3</div>
+                    <div class="palette-name">Lime Fitness</div>
+                    <div class="palette-desc">Świeży, energetyczny, Nike-style</div>
+                    <div class="palette-tags">
+                        <span class="tag">Fitness</span>
+                        <span class="tag">Energiczny</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #0ed145;">
+                        Primary
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #32ff7e;">
+                        Accent
+                        <div class="color-code">#32ff7e</div>
+                    </div>
+                    <div class="color" style="background: #0c0c0c;">
+                        Dark
+                        <div class="color-code">#0c0c0c</div>
+                    </div>
+                    <div class="color" style="background: #181818;">
+                        Dark Light
+                        <div class="color-code">#181818</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: #0c0c0c;">
+                    <button class="demo-button" style="background: #0ed145; color: #000;">Rozpocznij Teraz</button>
+                    <div class="demo-card" style="background: rgba(50,255,126,0.1); border: 1px solid #32ff7e; color: #fff;">
+                        Przykładowa karta z akcentem
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPCJA 4 -->
+            <div class="palette">
+                <div class="palette-header">
+                    <div class="palette-number">Opcja 4</div>
+                    <div class="palette-name">Emerald Luxury</div>
+                    <div class="palette-desc">Luksusowy, stonowany, Rolex-style</div>
+                    <div class="palette-tags">
+                        <span class="tag">Luxury</span>
+                        <span class="tag">Stonowany</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #10b981;">
+                        Primary
+                        <div class="color-code">#10b981</div>
+                    </div>
+                    <div class="color" style="background: #34d399;">
+                        Accent
+                        <div class="color-code">#34d399</div>
+                    </div>
+                    <div class="color" style="background: #030712;">
+                        Dark
+                        <div class="color-code">#030712</div>
+                    </div>
+                    <div class="color" style="background: #111827;">
+                        Dark Light
+                        <div class="color-code">#111827</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: #030712;">
+                    <button class="demo-button" style="background: #10b981; color: #000;">Rozpocznij Teraz</button>
+                    <div class="demo-card" style="background: rgba(52,211,153,0.1); border: 1px solid #34d399; color: #fff;">
+                        Przykładowa karta z akcentem
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OPCJA 5 -->
+            <div class="palette">
+                <div class="palette-header">
+                    <div class="palette-number">Opcja 5</div>
+                    <div class="palette-name">Pure Mono</div>
+                    <div class="palette-desc">Minimalistyczny, czysty, Apple-style</div>
+                    <div class="palette-tags">
+                        <span class="tag">Minimalizm</span>
+                        <span class="tag">Czysty</span>
+                    </div>
+                </div>
+                <div class="colors">
+                    <div class="color" style="background: #0ed145;">
+                        Primary
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #0ed145;">
+                        Accent (ten sam)
+                        <div class="color-code">#0ed145</div>
+                    </div>
+                    <div class="color" style="background: #000000;">
+                        Dark
+                        <div class="color-code">#000000</div>
+                    </div>
+                    <div class="color" style="background: #0f0f0f;">
+                        Dark Light
+                        <div class="color-code">#0f0f0f</div>
+                    </div>
+                </div>
+                <div class="demo-section" style="background: #000000;">
+                    <button class="demo-button" style="background: #0ed145; color: #000;">Rozpocznij Teraz</button>
+                    <div class="demo-card" style="background: rgba(14,209,69,0.1); border: 1px solid #0ed145; color: #fff;">
+                        Przykładowa karta z akcentem
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+            <h2 style="margin-bottom: 15px;">💡 Wybierz swoją paletę!</h2>
+            <p style="color: #666; margin-bottom: 20px;">Która kombinacja najbardziej Ci się podoba?</p>
+            <p style="color: #999; font-size: 14px;">⭐ Polecam Opcję 2 - Energy Charcoal (elegancki + nowoczesny)</p>
+        </div>
+    </div>
+</body>
+</html>
