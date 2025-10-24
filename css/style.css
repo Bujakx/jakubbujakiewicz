@@ -2047,6 +2047,8 @@ section {
         margin-right: auto;
         max-width: 100%;
         width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
     }
@@ -2088,7 +2090,9 @@ section {
         gap: 15px;
         margin-bottom: 35px;
         width: 100%;
-        padding: 0;
+        padding: 0 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
     
     .btn-hero-primary,
@@ -2118,6 +2122,10 @@ section {
         gap: 12px;
         margin-bottom: 30px;
         width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
     
     .feature-badge {
@@ -2138,6 +2146,9 @@ section {
         gap: 15px;
         text-align: center;
         width: 100%;
+        padding: 0 20px;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
     }
     
     .hero-image {
