@@ -1976,9 +1976,11 @@ section {
     }
     
     .hero-title {
-        font-size: 38px;
-        line-height: 1.2;
+        font-size: 34px;
+        line-height: 1.3;
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(14, 209, 69, 0.3);
+        word-wrap: break-word;
+        max-width: 100%;
     }
     
     .hero-description {
@@ -2107,9 +2109,11 @@ section {
     }
     
     .hero-title {
-        font-size: 32px;
-        line-height: 1.2;
+        font-size: 28px;
+        line-height: 1.3;
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9), 0 0 40px rgba(14, 209, 69, 0.4);
+        word-wrap: break-word;
+        max-width: 100%;
     }
     
     .hero-description {
