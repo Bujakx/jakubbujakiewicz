@@ -433,6 +433,26 @@ body {
     margin-bottom: 50px;
 }
 
+.hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.feature-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: var(--text-gray);
+}
+
+.feature-badge i {
+    color: var(--primary);
+    font-size: 20px;
+}
+
 .btn-hero-primary,
 .btn-hero-secondary {
     padding: 16px 32px;
@@ -2064,6 +2084,9 @@ section {
     }
     
     .hero-features {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 12px;
         margin-bottom: 30px;
     }
