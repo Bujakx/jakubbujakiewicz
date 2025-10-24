@@ -2029,6 +2029,7 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     
     .hero-badge,
@@ -2037,6 +2038,8 @@ section {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        max-width: 100%;
+        width: 100%;
     }
     
     .hero-title {
@@ -2053,11 +2056,13 @@ section {
         font-size: 17px;
         line-height: 1.6;
         text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+        max-width: 100%;
     }
     
     .hero-badge {
         font-size: 13px;
         padding: 8px 16px;
+        display: inline-flex;
     }
     
     .hero-buttons {
@@ -2089,10 +2094,13 @@ section {
         align-items: center;
         gap: 12px;
         margin-bottom: 30px;
+        width: 100%;
     }
     
     .feature-badge {
         font-size: 14px;
+        text-align: center;
+        justify-content: center;
     }
     
     .feature-badge i {
@@ -2104,6 +2112,7 @@ section {
         align-items: center;
         gap: 15px;
         text-align: center;
+        width: 100%;
     }
     
     .hero-image {
