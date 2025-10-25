@@ -3626,6 +3626,334 @@ body.single-product .site-content {
 }
 
 /* ============================================
+   BLOG PAGE (PAGE-ID-153) - MAGAZINE STYLE
+   ============================================ */
+
+/* Blog Page Body */
+body.page-id-153 {
+    background: #0a0a0a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Navigation for Blog Page */
+body.page-id-153 .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(14, 209, 69, 0.2) !important;
+}
+
+body.page-id-153 .navbar .container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.page-id-153 .navbar .nav-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 30px !important;
+}
+
+body.page-id-153 .navbar .logo {
+    display: block !important;
+    flex-shrink: 0 !important;
+    order: 1 !important;
+}
+
+body.page-id-153 .navbar .logo-image {
+    height: 50px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+body.page-id-153 .navbar .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 1 !important;
+    gap: 40px !important;
+    order: 2 !important;
+}
+
+body.page-id-153 .navbar .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 25px !important;
+    flex-wrap: nowrap !important;
+}
+
+body.page-id-153 .navbar .nav-links li {
+    display: inline-flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.page-id-153 .navbar .nav-links .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    transition: color 0.3s ease !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    padding: 5px 0 !important;
+}
+
+body.page-id-153 .navbar .nav-links .nav-link:hover {
+    color: #0ed145 !important;
+}
+
+body.page-id-153 .navbar .nav-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Hide default page header image */
+body.page-id-153 .entry-header {
+    display: none !important;
+}
+
+body.page-id-153 .entry-thumbnail {
+    display: none !important;
+}
+
+/* Blog Content Area */
+body.page-id-153 .site-main {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 100px 40px 80px !important;
+}
+
+body.page-id-153 .content-area {
+    width: 100% !important;
+}
+
+body.page-id-153 .entry-content {
+    padding: 0 !important;
+}
+
+/* Add Custom Blog Header */
+body.page-id-153 .entry-content::before {
+    content: '📝 BLOG' !important;
+    display: block !important;
+    text-align: center !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(48px, 6vw, 72px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 60px !important;
+    letter-spacing: -1px !important;
+    padding-bottom: 40px !important;
+    border-bottom: 2px solid rgba(14, 209, 69, 0.2) !important;
+}
+
+/* WordPress Query Block */
+body.page-id-153 .wp-block-query {
+    margin: 0 !important;
+}
+
+/* Posts Grid - 3 columns */
+body.page-id-153 .wp-block-post-template {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)) !important;
+    gap: 40px !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Individual Post Card */
+body.page-id-153 .wp-block-post {
+    background: rgba(20, 25, 35, 0.5) !important;
+    border: 1px solid rgba(14, 209, 69, 0.15) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    transition: all 0.4s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    list-style: none !important;
+}
+
+body.page-id-153 .wp-block-post:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(14, 209, 69, 0.4) !important;
+    box-shadow: 0 20px 60px rgba(14, 209, 69, 0.15) !important;
+}
+
+/* Featured Image */
+body.page-id-153 .wp-block-post-featured-image {
+    position: relative !important;
+    height: 280px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+}
+
+body.page-id-153 .wp-block-post-featured-image a {
+    display: block !important;
+    height: 100% !important;
+}
+
+body.page-id-153 .wp-block-post-featured-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+    display: block !important;
+}
+
+body.page-id-153 .wp-block-post:hover .wp-block-post-featured-image img {
+    transform: scale(1.08) !important;
+}
+
+body.page-id-153 .wp-block-post-featured-image::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 50% !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent) !important;
+    pointer-events: none !important;
+}
+
+/* Post Content Group */
+body.page-id-153 .wp-block-post .wp-block-group {
+    padding: 30px 30px 20px !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Post Title */
+body.page-id-153 .wp-block-post-title {
+    margin: 0 0 15px !important;
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+    font-weight: 700 !important;
+}
+
+body.page-id-153 .wp-block-post-title a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+body.page-id-153 .wp-block-post-title a:hover {
+    color: #0ed145 !important;
+}
+
+/* Post Meta (Date & Author) */
+body.page-id-153 .wp-block-post .wp-block-group.is-layout-flex {
+    display: flex !important;
+    gap: 8px !important;
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin: 0 0 15px !important;
+    padding: 0 !important;
+    align-items: center !important;
+}
+
+body.page-id-153 .wp-block-post-date,
+body.page-id-153 .wp-block-post-author-name {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+body.page-id-153 .wp-block-post-author-name a {
+    color: rgba(255, 255, 255, 0.5) !important;
+    text-decoration: none !important;
+    transition: color 0.3s ease !important;
+}
+
+body.page-id-153 .wp-block-post-author-name a:hover {
+    color: #0ed145 !important;
+}
+
+/* Post Excerpt */
+body.page-id-153 .wp-block-post-excerpt {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    margin: 0 0 20px !important;
+    flex: 1 !important;
+}
+
+body.page-id-153 .wp-block-post-excerpt__excerpt {
+    margin: 0 0 15px !important;
+}
+
+body.page-id-153 .wp-block-post-excerpt__more-text {
+    margin: 0 !important;
+}
+
+/* Read More Link */
+body.page-id-153 .wp-block-post-excerpt__more-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #0ed145 0%, #09a034 100%) !important;
+    color: #000000 !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+}
+
+body.page-id-153 .wp-block-post-excerpt__more-link:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(14, 209, 69, 0.4) !important;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    body.page-id-153 .wp-block-post-template {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 30px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.page-id-153 .site-main {
+        padding: 100px 20px 60px !important;
+    }
+    
+    body.page-id-153 .wp-block-post-template {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    body.page-id-153 .entry-content::before {
+        font-size: 36px !important;
+        margin-bottom: 40px !important;
+    }
+}
+
+/* ============================================
    ARCHIVE / BLOG PAGE STYLING - MAGAZINE STYLE
    ============================================ */
 
