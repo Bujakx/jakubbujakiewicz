@@ -4,6 +4,16 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLKWFT9GKW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FLKWFT9GKW');
+    </script>
+    
     <!-- SEO Meta Tags -->
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="Jakub Bujakiewicz">
