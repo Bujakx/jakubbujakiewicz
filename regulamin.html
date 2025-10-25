@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regulamin - Jakub Bujakiewicz | Trener Personalny</title>
+    <meta name="description" content="Regulamin świadczenia usług treningowych i dietetycznych przez Jakuba Bujakiewicza - Trenera Personalnego">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="apple-touch-icon" href="/assets/images/logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        :root {
+            --primary: #0ed145;
+            --gradient-primary: linear-gradient(135deg, #0ed145 0%, #09a034 100%);
+            --dark: #000000;
+            --dark-secondary: #0a0a0a;
+            --text: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border: rgba(14, 209, 69, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            color: #ffffff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gradient-primary);
+            color: var(--dark);
+            padding: 14px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(14, 209, 69, 0.3);
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(14, 209, 69, 0.5);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 150px 40px 100px;
+            background: radial-gradient(circle at 50% 0%, rgba(14, 209, 69, 0.15) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(14, 209, 69, 0.15);
+            border: 2px solid rgba(14, 209, 69, 0.3);
+            padding: 10px 24px;
+            border-radius: 50px;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(14, 209, 69, 0.4); }
+            50% { box-shadow: 0 0 0 15px rgba(14, 209, 69, 0); }
+        }
+        
+        .hero-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: titleGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(14, 209, 69, 0.4)); }
+            50% { filter: drop-shadow(0 0 40px rgba(14, 209, 69, 0.7)); }
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(18px, 2vw, 24px);
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 50px;
+            line-height: 1.6;
+        }
+        
+        .hero-date {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 20px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+        
+        .content-grid {
+            display: grid;
+            gap: 40px;
+        }
+        
+        .content-card {
+            background: linear-gradient(135deg, rgba(20, 25, 48, 0.6) 0%, rgba(10, 15, 30, 0.6) 100%);
+            border: 2px solid var(--border);
+            border-radius: 24px;
+            padding: 60px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(14, 209, 69, 0.05) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .content-card:hover::before {
+            opacity: 1;
+        }
+        
+        .content-card:hover {
+            border-color: rgba(14, 209, 69, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(14, 209, 69, 0.2);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 16px;
+            font-size: 28px;
+            color: var(--dark);
+            flex-shrink: 0;
+        }
+        
+        .card-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            color: #ffffff;
+            margin: 0;
+        }
+        
+        .card-content h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 30px 0 15px;
+        }
+        
+        .card-content p {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .card-content ul,
+        .card-content ol {
+            margin: 20px 0 20px 30px;
+        }
+        
+        .card-content li {
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 12px;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .card-content ul li::marker {
+            color: var(--primary);
+            font-size: 1.2em;
+        }
+        
+        .card-content strong {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .card-content a {
+            color: var(--primary);
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+        
+        .card-content a:hover {
+            text-shadow: 0 0 15px rgba(14, 209, 69, 0.6);
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: rgba(14, 209, 69, 0.1);
+            border: 2px solid rgba(14, 209, 69, 0.4);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--primary);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .highlight-box p {
+            margin-bottom: 10px;
+        }
+        
+        /* Footer */
+        .footer-legal {
+            background: var(--dark-secondary);
+            border-top: 1px solid var(--border);
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .footer-legal-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-legal p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            text-shadow: 0 0 20px rgba(14, 209, 69, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+                padding: 0 20px;
+            }
+            
+            .hero-section {
+                padding: 120px 20px 60px;
+            }
+            
+            .content-section {
+                padding: 60px 20px;
+            }
+            
+            .content-card {
+                padding: 30px 20px;
+            }
+            
+            .card-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="/assets/images/logo.png" alt="Jakub Bujakiewicz Logo" class="logo-img">
+                <span>Jakub</span> Bujakiewicz
+            </a>
+            <a href="/" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                Powrót do strony głównej
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-file-contract"></i>
+                WARUNKI ŚWIADCZENIA USŁUG
+            </div>
+            <h1 class="hero-title">Regulamin</h1>
+            <p class="hero-subtitle">
+                Zasady świadczenia usług treningowych i dietetycznych. Zapoznaj się z regulaminem przed zakupem.
+            </p>
+            <p class="hero-date">📅 Ostatnia aktualizacja: 25 stycznia 2025</p>
+        </div>
+    </section>
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-grid">
+            <!-- §1 Postanowienia ogólne -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h2 class="card-title">§1 Postanowienia ogólne</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>1.1.</strong> Niniejszy regulamin określa zasady świadczenia usług przez <strong>Jakuba Bujakiewicza</strong>, zwanego dalej "Trenerem", w zakresie:</p>
+                    <ul>
+                        <li>Indywidualnych planów treningowych</li>
+                        <li>Indywidualnych planów dietetycznych</li>
+                        <li>Prowadzenia online (coaching)</li>
+                        <li>Innych usług związanych z treningiem personalnym</li>
+                    </ul>
+                    <p><strong>1.2.</strong> Korzystanie z usług Trenera oznacza akceptację niniejszego regulaminu.</p>
+                    <p><strong>1.3.</strong> Trener zastrzega sobie prawo do zmiany regulaminu. Zmiany wchodzą w życie z chwilą ich publikacji na stronie internetowej.</p>
+                </div>
+            </div>
+            
+            <!-- §2 Zakup usług -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h2 class="card-title">§2 Zakup usług</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>2.1.</strong> Zakup usług odbywa się poprzez:</p>
+                    <ul>
+                        <li>Złożenie zamówienia na stronie internetowej <strong>jakubbujakiewicz.pl</strong></li>
+                        <li>Dokonanie płatności za wybraną usługę</li>
+                        <li>Wypełnienie formularza z danymi niezbędnymi do realizacji usługi</li>
+                    </ul>
+                    <p><strong>2.2.</strong> Po otrzymaniu płatności, Klient otrzyma potwierdzenie zamówienia na podany adres e-mail.</p>
+                    <p><strong>2.3.</strong> Czas realizacji usługi:</p>
+                    <ul>
+                        <li><strong>Plan treningowy:</strong> do 5 dni roboczych od otrzymania wypełnionego formularza</li>
+                        <li><strong>Plan dietetyczny:</strong> do 7 dni roboczych od otrzymania wypełnionego formularza</li>
+                        <li><strong>Prowadzenie online:</strong> start w ciągu 24 godzin od aktywacji</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- §3 Zobowiązania Klienta -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h2 class="card-title">§3 Zobowiązania Klienta</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>3.1.</strong> Klient zobowiązuje się do:</p>
+                    <ul>
+                        <li>Podania prawdziwych i aktualnych danych w formularzach</li>
+                        <li>Informowania Trenera o wszelkich problemach zdrowotnych i kontuzjach</li>
+                        <li>Przestrzegania zaleceń zawartych w planach treningowych i dietetycznych</li>
+                        <li>Regularnego kontaktu z Trenerem w przypadku prowadzenia online</li>
+                    </ul>
+                    <p><strong>3.2.</strong> Przed rozpoczęciem treningu Klient powinien skonsultować się z lekarzem, szczególnie w przypadku:</p>
+                    <ul>
+                        <li>Chorób przewlekłych</li>
+                        <li>Problemów z sercem lub ciśnieniem</li>
+                        <li>Urazów i kontuzji</li>
+                        <li>Ciąży</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-exclamation-triangle"></i> Ważne!</h4>
+                        <p>Trener nie ponosi odpowiedzialności za skutki wynikające z nieprzestrzegania zaleceń lub zatajenia istotnych informacji zdrowotnych.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- §4 Zakres usług -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h2 class="card-title">§4 Zakres usług</h2>
+                </div>
+                <div class="card-content">
+                    <h3>4.1. Indywidualny Plan Treningowy</h3>
+                    <p>Plan treningowy zawiera:</p>
+                    <ul>
+                        <li>Spersonalizowany harmonogram ćwiczeń (4-6 treningów tygodniowo)</li>
+                        <li>Szczegółowe opisy techniki wykonania ćwiczeń</li>
+                        <li>Zalecenia dotyczące obciążeń i progresji</li>
+                        <li>Porady dotyczące regeneracji</li>
+                        <li>Kontakt mailowy w razie pytań (odpowiedź do 48h)</li>
+                    </ul>
+                    
+                    <h3>4.2. Indywidualny Plan Dietetyczny</h3>
+                    <p>Plan dietetyczny zawiera:</p>
+                    <ul>
+                        <li>Spersonalizowane menu na 4 tygodnie</li>
+                        <li>Szczegółowy rozkład makroskładników</li>
+                        <li>Listę zakupów</li>
+                        <li>Przepisy na posiłki</li>
+                        <li>Suplementację (opcjonalnie)</li>
+                        <li>Kontakt mailowy w razie pytań (odpowiedź do 48h)</li>
+                    </ul>
+                    
+                    <h3>4.3. Prowadzenie Online</h3>
+                    <p>Prowadzenie online obejmuje:</p>
+                    <ul>
+                        <li>Indywidualny plan treningowy aktualizowany co 4 tygodnie</li>
+                        <li>Indywidualny plan dietetyczny aktualizowany co 4 tygodnie</li>
+                        <li>Cotygodniowe raporty postępów</li>
+                        <li>Stały kontakt z Trenerem (odpowiedź do 24h)</li>
+                        <li>Modyfikacje planów w razie potrzeby</li>
+                        <li>Wsparcie motywacyjne</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- §5 Zwroty i reklamacje -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-undo"></i>
+                    </div>
+                    <h2 class="card-title">§5 Zwroty i reklamacje</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>5.1.</strong> Zgodnie z prawem konsumenckim, Klient ma prawo odstąpić od umowy w ciągu <strong>14 dni od zakupu</strong>, przed otrzymaniem planu.</p>
+                    <p><strong>5.2.</strong> Po otrzymaniu planu (treningowego lub dietetycznego), odstąpienie od umowy nie jest możliwe ze względu na charakter usługi (produkt cyfrowy).</p>
+                    <p><strong>5.3.</strong> W przypadku prowadzenia online:</p>
+                    <ul>
+                        <li>Klient może zrezygnować w dowolnym momencie</li>
+                        <li>Rozliczenie następuje proporcjonalnie do wykorzystanego okresu</li>
+                        <li>Niewykorzystana część zostanie zwrócona</li>
+                    </ul>
+                    <p><strong>5.4.</strong> Reklamacje należy zgłaszać na adres: <strong>kontakt@jakubbujakiewicz.pl</strong></p>
+                    <p><strong>5.5.</strong> Trener rozpatrzy reklamację w ciągu <strong>14 dni roboczych</strong>.</p>
+                </div>
+            </div>
+            
+            <!-- §6 Ochrona danych -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h2 class="card-title">§6 Ochrona danych osobowych</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>6.1.</strong> Administratorem danych osobowych jest <strong>Jakub Bujakiewicz</strong>.</p>
+                    <p><strong>6.2.</strong> Dane osobowe Klientów są przetwarzane wyłącznie w celu realizacji usług.</p>
+                    <p><strong>6.3.</strong> Klient ma prawo do:</p>
+                    <ul>
+                        <li>Dostępu do swoich danych</li>
+                        <li>Ich poprawiania</li>
+                        <li>Usunięcia</li>
+                        <li>Ograniczenia przetwarzania</li>
+                    </ul>
+                    <p><strong>6.4.</strong> Dane osobowe nie będą przekazywane osobom trzecim bez zgody Klienta.</p>
+                    <p><strong>6.5.</strong> Więcej informacji w <a href="/polityka-prywatnosci.html">Polityce Prywatności</a>.</p>
+                </div>
+            </div>
+            
+            <!-- §7 Odpowiedzialność -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h2 class="card-title">§7 Odpowiedzialność</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>7.1.</strong> Trener nie ponosi odpowiedzialności za:</p>
+                    <ul>
+                        <li>Skutki wynikające z nieprawidłowego wykonywania ćwiczeń</li>
+                        <li>Kontuzje powstałe w wyniku zaniedbania techniki</li>
+                        <li>Brak efektów spowodowany nieprzestrzeganiem zaleceń</li>
+                        <li>Problemy zdrowotne wynikające z zatajonych informacji</li>
+                    </ul>
+                    <p><strong>7.2.</strong> Klient wykonuje ćwiczenia na własną odpowiedzialność.</p>
+                    <p><strong>7.3.</strong> W razie wątpliwości dotyczących bezpieczeństwa, Klient powinien skonsultować się z lekarzem.</p>
+                    
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-heart-pulse"></i> Bezpieczeństwo przede wszystkim</h4>
+                        <p>Twoje zdrowie jest najważniejsze. Jeśli masz jakiekolwiek wątpliwości zdrowotne, zawsze skonsultuj się z lekarzem przed rozpoczęciem treningu.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- §8 Postanowienia końcowe -->
+            <div class="content-card">
+                <div class="card-header">
+                    <div class="card-icon">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h2 class="card-title">§8 Postanowienia końcowe</h2>
+                </div>
+                <div class="card-content">
+                    <p><strong>8.1.</strong> W sprawach nieuregulowanych niniejszym regulaminem stosuje się przepisy prawa polskiego.</p>
+                    <p><strong>8.2.</strong> Spory wynikające z realizacji usług będą rozstrzygane przez sąd właściwy dla siedziby Trenera.</p>
+                    <p><strong>8.3.</strong> Regulamin wchodzi w życie z dniem publikacji na stronie internetowej.</p>
+                    
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-phone-alt"></i> Kontakt</h4>
+                        <p><strong>Email:</strong> kontakt@jakubbujakiewicz.pl</p>
+                        <p><strong>Strona:</strong> jakubbujakiewicz.pl</p>
+                        <p><strong>Facebook:</strong> facebook.com/profile.php?id=61570839081946</p>
+                        <p><strong>Instagram:</strong> instagram.com/bujak04</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer-legal">
+        <div class="footer-legal-content">
+            <p>© 2025 <strong>Jakub Bujakiewicz</strong> - Trener Personalny. Wszystkie prawa zastrzeżone.</p>
+            <div class="footer-links">
+                <a href="/"><i class="fas fa-home"></i> Strona główna</a>
+                <a href="/polityka-prywatnosci.html"><i class="fas fa-shield-alt"></i> Polityka prywatności</a>
+                <a href="mailto:kontakt@jakubbujakiewicz.pl"><i class="fas fa-envelope"></i> Kontakt</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
