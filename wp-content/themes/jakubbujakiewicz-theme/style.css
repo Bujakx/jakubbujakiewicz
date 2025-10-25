@@ -3625,11 +3625,369 @@ body.single-product .site-content {
     color: rgba(255, 255, 255, 0.85) !important;
 }
 
+/* ============================================
+   ARCHIVE / BLOG PAGE STYLING - MAGAZINE STYLE
+   ============================================ */
+
+/* Blog/Archive Body */
+body.blog,
+body.archive {
+    background: #0a0a0a !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Navigation for Blog/Archive */
+body.blog .navbar,
+body.archive .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 15px 0 !important;
+    border-bottom: 1px solid rgba(14, 209, 69, 0.2) !important;
+}
+
+body.blog .navbar .container,
+body.archive .navbar .container {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 0 40px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+body.blog .navbar .nav-wrapper,
+body.archive .navbar .nav-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 30px !important;
+}
+
+body.blog .navbar .logo,
+body.archive .navbar .logo {
+    display: block !important;
+    flex-shrink: 0 !important;
+    order: 1 !important;
+}
+
+body.blog .navbar .logo-image,
+body.archive .navbar .logo-image {
+    height: 50px !important;
+    width: auto !important;
+    display: block !important;
+}
+
+body.blog .navbar .nav-menu,
+body.archive .navbar .nav-menu {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 1 !important;
+    gap: 40px !important;
+    order: 2 !important;
+}
+
+body.blog .navbar .nav-links,
+body.archive .navbar .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    gap: 25px !important;
+    flex-wrap: nowrap !important;
+}
+
+body.blog .navbar .nav-links li,
+body.archive .navbar .nav-links li {
+    display: inline-flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body.blog .navbar .nav-links .nav-link,
+body.archive .navbar .nav-links .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    transition: color 0.3s ease !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+    padding: 5px 0 !important;
+}
+
+body.blog .navbar .nav-links .nav-link:hover,
+body.archive .navbar .nav-links .nav-link:hover {
+    color: #0ed145 !important;
+}
+
+body.blog .navbar .nav-buttons,
+body.archive .navbar .nav-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Blog Content Area */
+body.blog .site-main,
+body.archive .site-main {
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    padding: 120px 40px 80px !important;
+}
+
+/* Page Header */
+body.blog .page-header,
+body.archive .page-header {
+    text-align: center !important;
+    margin-bottom: 60px !important;
+    padding-bottom: 40px !important;
+    border-bottom: 2px solid rgba(14, 209, 69, 0.2) !important;
+}
+
+body.blog .page-title,
+body.archive .page-title {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: clamp(48px, 6vw, 72px) !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 20px !important;
+    letter-spacing: -1px !important;
+}
+
+body.blog .archive-description,
+body.archive .archive-description {
+    font-size: 18px !important;
+    color: rgba(255, 255, 255, 0.7) !important;
+    line-height: 1.6 !important;
+    max-width: 700px !important;
+    margin: 0 auto !important;
+}
+
+/* Posts Grid */
+body.blog .posts-grid,
+body.archive .posts-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)) !important;
+    gap: 40px !important;
+    margin-bottom: 60px !important;
+}
+
+/* Individual Post Card */
+body.blog article,
+body.archive article {
+    background: rgba(20, 25, 35, 0.5) !important;
+    border: 1px solid rgba(14, 209, 69, 0.15) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    transition: all 0.4s ease !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+body.blog article:hover,
+body.archive article:hover {
+    transform: translateY(-8px) !important;
+    border-color: rgba(14, 209, 69, 0.4) !important;
+    box-shadow: 0 20px 60px rgba(14, 209, 69, 0.15) !important;
+}
+
+/* Thumbnail */
+body.blog .entry-thumbnail,
+body.archive .entry-thumbnail {
+    position: relative !important;
+    height: 280px !important;
+    overflow: hidden !important;
+    display: block !important;
+}
+
+body.blog .entry-thumbnail img,
+body.archive .entry-thumbnail img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.5s ease !important;
+    display: block !important;
+}
+
+body.blog article:hover .entry-thumbnail img,
+body.archive article:hover .entry-thumbnail img {
+    transform: scale(1.08) !important;
+}
+
+body.blog .entry-thumbnail::after,
+body.archive .entry-thumbnail::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 50% !important;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent) !important;
+    pointer-events: none !important;
+}
+
+/* Entry Header */
+body.blog .entry-header,
+body.archive .entry-header {
+    padding: 30px 30px 20px !important;
+}
+
+body.blog .entry-title,
+body.archive .entry-title {
+    margin: 0 0 15px !important;
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+}
+
+body.blog .entry-title a,
+body.archive .entry-title a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    transition: color 0.3s ease !important;
+}
+
+body.blog .entry-title a:hover,
+body.archive .entry-title a:hover {
+    color: #0ed145 !important;
+}
+
+/* Entry Meta */
+body.blog .entry-meta,
+body.archive .entry-meta {
+    display: flex !important;
+    gap: 15px !important;
+    font-size: 13px !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin-bottom: 15px !important;
+}
+
+body.blog .entry-meta .posted-on,
+body.archive .entry-meta .posted-on,
+body.blog .entry-meta .byline,
+body.archive .entry-meta .byline {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+}
+
+/* Entry Summary */
+body.blog .entry-summary,
+body.archive .entry-summary {
+    padding: 0 30px !important;
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    flex: 1 !important;
+}
+
+/* Entry Footer */
+body.blog .entry-footer,
+body.archive .entry-footer {
+    padding: 20px 30px 30px !important;
+}
+
+body.blog .read-more,
+body.archive .read-more {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    background: linear-gradient(135deg, #0ed145 0%, #09a034 100%) !important;
+    color: #000000 !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+}
+
+body.blog .read-more:hover,
+body.archive .read-more:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(14, 209, 69, 0.4) !important;
+}
+
+body.blog .read-more::after,
+body.archive .read-more::after {
+    content: '→' !important;
+    font-size: 18px !important;
+    transition: transform 0.3s ease !important;
+}
+
+body.blog .read-more:hover::after,
+body.archive .read-more:hover::after {
+    transform: translateX(4px) !important;
+}
+
+/* Pagination */
+body.blog .pagination,
+body.archive .pagination {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin: 60px 0 !important;
+}
+
+body.blog .pagination .page-numbers,
+body.archive .pagination .page-numbers {
+    padding: 12px 20px !important;
+    background: rgba(20, 25, 35, 0.5) !important;
+    border: 1px solid rgba(14, 209, 69, 0.2) !important;
+    border-radius: 8px !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+body.blog .pagination .page-numbers:hover,
+body.archive .pagination .page-numbers:hover,
+body.blog .pagination .page-numbers.current,
+body.archive .pagination .page-numbers.current {
+    background: #0ed145 !important;
+    color: #000000 !important;
+    border-color: #0ed145 !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body.blog .site-main,
+    body.archive .site-main {
+        padding: 100px 20px 60px !important;
+    }
+    
+    body.blog .posts-grid,
+    body.archive .posts-grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    body.blog .page-title,
+    body.archive .page-title {
+        font-size: 36px !important;
+    }
+}
+
 /* Hide large header images (KOSZYK, BLOG, Kontakt etc) */
 body.woocommerce-cart .entry-header img,
 body.woocommerce-checkout .entry-header img,
-body.blog .entry-header img,
-body.archive .entry-header img,
 body.page .entry-header img,
 .woocommerce-page .entry-header img,
 .page-header img[src*="960x960"],
@@ -3648,11 +4006,9 @@ img[src*="ZAMOWIENIE"],
     padding: 0 !important;
 }
 
-/* Hide the entire thumbnail container */
+/* Hide the entire thumbnail container - tylko dla woocommerce */
 body.woocommerce-cart .entry-thumbnail,
-body.woocommerce-checkout .entry-thumbnail,
-body.blog .entry-thumbnail,
-body.archive .entry-thumbnail {
+body.woocommerce-checkout .entry-thumbnail {
     display: none !important;
 }
 
@@ -3662,11 +4018,9 @@ body.woocommerce-checkout .entry-header {
     display: none !important;
 }
 
-/* Page headers styling */
+/* Page headers styling - tylko dla woocommerce i page */
 body.woocommerce-cart .page-header,
 body.woocommerce-checkout .page-header,
-body.blog .page-header,
-body.archive .page-header,
 body.page .page-header,
 .woocommerce-page .page-header {
     text-align: center !important;
@@ -3675,8 +4029,6 @@ body.page .page-header,
 }
 
 body.woocommerce-cart .page-title,
-body.blog .page-title,
-body.archive .page-title,
 body.page .page-title,
 .woocommerce-page .page-title {
     font-family: 'Poppins', sans-serif !important;
