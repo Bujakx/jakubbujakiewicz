@@ -3630,10 +3630,20 @@ body.single-product .site-content {
    ============================================ */
 
 /* Blog Page Body */
-body.page-id-153 {
-    background: #0a0a0a !important;
+body.page-id-153,
+body.page-id-153 html {
+    background: #000000 !important;
     margin: 0 !important;
     padding: 0 !important;
+}
+
+body.page-id-153::before,
+body.page-id-153::after {
+    display: none !important;
+}
+
+body.page-id-153 * {
+    box-sizing: border-box !important;
 }
 
 /* Navigation for Blog Page */
@@ -3744,14 +3754,21 @@ body.page-id-153 .site-main {
     max-width: 1400px !important;
     margin: 0 auto !important;
     padding: 100px 40px 80px !important;
+    background: #000000 !important;
 }
 
 body.page-id-153 .content-area {
     width: 100% !important;
+    background: #000000 !important;
 }
 
 body.page-id-153 .entry-content {
     padding: 0 !important;
+    background: #000000 !important;
+}
+
+body.page-id-153 article {
+    background: #000000 !important;
 }
 
 /* Add Custom Blog Header */
@@ -3775,6 +3792,15 @@ body.page-id-153 .entry-content::before {
 /* WordPress Query Block */
 body.page-id-153 .wp-block-query {
     margin: 0 !important;
+    background: #000000 !important;
+}
+
+body.page-id-153 .wp-block-query.alignwide {
+    background: #000000 !important;
+}
+
+body.page-id-153 .site-footer {
+    background: #000000 !important;
 }
 
 /* Posts Grid - 3 columns */
@@ -3839,22 +3865,10 @@ body.page-id-153 .wp-block-post-featured-image::after {
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    height: 60% !important;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.3)) !important;
+    height: 30% !important;
+    background: linear-gradient(to top, rgba(10, 15, 25, 0.9), transparent) !important;
     pointer-events: none !important;
-}
-
-body.page-id-153 .wp-block-post-featured-image::before {
-    content: '' !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(14, 209, 69, 0.05) !important;
-    mix-blend-mode: overlay !important;
-    pointer-events: none !important;
-    z-index: 1 !important;
+    z-index: 2 !important;
 }
 
 /* Post Content Group */
