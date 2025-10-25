@@ -972,3 +972,119 @@ function jakubbujakiewicz_checkout_custom_css() {
     }
 }
 add_action('wp_head', 'jakubbujakiewicz_checkout_custom_css', 999);
+
+// ===== CONTACT FORM API ENDPOINT =====
+// Register REST API endpoint for contact form
+add_action('rest_api_init', function() {
+    register_rest_route('contact/v1', '/send', array(
+        'methods' => 'POST',
+        'callback' => 'jakubbujakiewicz_handle_contact_form',
+        'permission_callback' => '__return_true', // Allow public access
+    ));
+});
+
+// Handle contact form submission
+function jakubbujakiewicz_handle_contact_form($request) {
+    // Get JSON parameters
+    $params = $request->get_json_params();
+    
+    // Validate required fields
+    if (empty($params['name']) || empty($params['email']) || empty($params['message'])) {
+        return new WP_Error('missing_fields', 'Wszystkie pola są wymagane', array('status' => 400));
+    }
+    
+    // Sanitize input
+    $name = sanitize_text_field($params['name']);
+    $email = sanitize_email($params['email']);
+    $phone = !empty($params['phone']) ? sanitize_text_field($params['phone']) : 'Nie podano';
+    $message = sanitize_textarea_field($params['message']);
+    
+    // Validate email
+    if (!is_email($email)) {
+        return new WP_Error('invalid_email', 'Nieprawidłowy adres email', array('status' => 400));
+    }
+    
+    // Prepare email
+    $to = 'kontakt@jakubbujakiewicz.pl';
+    $subject = '📧 Nowa wiadomość ze strony jakubbujakiewicz.pl';
+    
+    // Email content (HTML format)
+    $email_content = "
+    <html>
+    <head>
+        <style>
+            body { font-family: Arial, sans-serif; background: #f4f4f4; padding: 20px; }
+            .container { background: #ffffff; border-radius: 10px; padding: 30px; max-width: 600px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+            .header { background: linear-gradient(135deg, #0ed145, #09a033); color: white; padding: 20px; border-radius: 8px; text-align: center; margin-bottom: 20px; }
+            .header h1 { margin: 0; font-size: 24px; }
+            .field { margin-bottom: 20px; padding: 15px; background: #f9f9f9; border-left: 4px solid #0ed145; border-radius: 4px; }
+            .field label { font-weight: bold; color: #0ed145; display: block; margin-bottom: 5px; }
+            .field p { margin: 0; color: #333; }
+            .message-box { background: #f0fdf4; border: 2px solid #0ed145; border-radius: 8px; padding: 20px; margin-top: 20px; }
+            .message-box label { font-weight: bold; color: #0ed145; display: block; margin-bottom: 10px; }
+            .message-box p { margin: 0; line-height: 1.6; color: #333; white-space: pre-wrap; }
+            .footer { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; color: #666; font-size: 12px; }
+        </style>
+    </head>
+    <body>
+        <div class='container'>
+            <div class='header'>
+                <h1>💪 Nowa wiadomość kontaktowa</h1>
+            </div>
+            
+            <div class='field'>
+                <label>👤 Imię i nazwisko:</label>
+                <p>{$name}</p>
+            </div>
+            
+            <div class='field'>
+                <label>📧 Email:</label>
+                <p><a href='mailto:{$email}'>{$email}</a></p>
+            </div>
+            
+            <div class='field'>
+                <label>📱 Telefon:</label>
+                <p>{$phone}</p>
+            </div>
+            
+            <div class='message-box'>
+                <label>💬 Wiadomość:</label>
+                <p>{$message}</p>
+            </div>
+            
+            <div class='footer'>
+                <p>Ta wiadomość została wysłana z formularza kontaktowego na stronie <strong>jakubbujakiewicz.pl</strong></p>
+                <p>Data wysłania: " . date('d.m.Y H:i:s') . "</p>
+            </div>
+        </div>
+    </body>
+    </html>
+    ";
+    
+    // Headers for HTML email
+    $headers = array(
+        'Content-Type: text/html; charset=UTF-8',
+        'From: Formularz Kontaktowy <no-reply@jakubbujakiewicz.pl>',
+        'Reply-To: ' . $name . ' <' . $email . '>'
+    );
+    
+    // Send email
+    $sent = wp_mail($to, $subject, $email_content, $headers);
+    
+    if ($sent) {
+        // Log success (optional)
+        error_log('Contact form email sent to: ' . $to . ' from: ' . $email);
+        
+        return array(
+            'success' => true,
+            'message' => 'Wiadomość została wysłana pomyślnie! Odezwę się wkrótce.'
+        );
+    } else {
+        // Log error
+        error_log('Contact form email FAILED to send to: ' . $to . ' from: ' . $email);
+        
+        return new WP_Error('send_failed', 'Wystąpił błąd podczas wysyłania. Spróbuj ponownie lub napisz bezpośrednio na kontakt@jakubbujakiewicz.pl', array('status' => 500));
+    }
+}
+
+?>

@@ -278,23 +278,31 @@ function initContactForm() {
         submitBtn.disabled = true;
         
         try {
-            // Here you would send data to your backend
-            // For now, we'll simulate an API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            // Send to WordPress REST API endpoint
+            const response = await fetch('https://jakubbujakiewicz.pl/wp-json/contact/v1/send', {
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
             
-            // Show success message
-            showNotification('Wiadomość wysłana pomyślnie! Odezwę się wkrótce.', 'success');
-            form.reset();
+            const result = await response.json();
             
-            // You can integrate with WordPress Contact Form 7 or send email via backend
-            // Example: await fetch('https://jakubbujakiewicz.pl/wp-json/contact/v1/send', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify(formData)
-            // });
+            if (response.ok && result.success) {
+                // Show success message
+                showNotification(result.message || 'Wiadomość wysłana pomyślnie! Odezwę się wkrótce.', 'success');
+                form.reset();
+            } else {
+                // Handle error from API
+                const errorMessage = result.message || result.data?.message || 'Wystąpił błąd podczas wysyłania.';
+                showNotification(errorMessage, 'error');
+            }
             
         } catch (error) {
-            showNotification('Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na email.', 'error');
+            console.error('Contact form error:', error);
+            showNotification('Wystąpił błąd. Spróbuj ponownie lub napisz bezpośrednio na kontakt@jakubbujakiewicz.pl', 'error');
         } finally {
             submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
