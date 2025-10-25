@@ -60,6 +60,33 @@ get_header();
                     </a>
                 </div>
             </div>
+            
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-wrapper">
+                    <div class="floating-card card-1">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Plany online</span>
+                    </div>
+                    <div class="floating-card card-2">
+                        <i class="fas fa-apple-alt"></i>
+                        <span>Dieta indywidualna</span>
+                    </div>
+                    <div class="floating-card card-3">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Wsparcie 24/7</span>
+                    </div>
+                    <div class="hero-img-placeholder">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=800&fit=crop" alt="Trening personalny - Jakub Bujakiewicz" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="mouse">
+            <div class="wheel"></div>
         </div>
     </div>
 </section>
