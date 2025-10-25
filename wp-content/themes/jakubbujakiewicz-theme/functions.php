@@ -32,7 +32,7 @@ function jakubbujakiewicz_theme_scripts() {
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css', array(), '6.5.1');
     
     // Theme stylesheet
-    wp_enqueue_style('jakubbujakiewicz-style', get_stylesheet_uri(), array(), '5.3');
+    wp_enqueue_style('jakubbujakiewicz-style', get_stylesheet_uri(), array(), '5.4_' . time());
     
     // Theme scripts
     wp_enqueue_script('jakubbujakiewicz-script', get_template_directory_uri() . '/js/main.js', array('jquery'), '5.2', true);
