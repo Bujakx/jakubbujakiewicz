@@ -179,6 +179,8 @@ function initScrollEffects() {
     // Scroll to top button
     const scrollTopBtn = document.getElementById('scrollTop');
     
+    if (!scrollTopBtn) return; // Exit if button not found
+    
     window.addEventListener('scroll', () => {
         if (window.scrollY > 500) {
             scrollTopBtn.classList.add('visible');
@@ -260,6 +262,8 @@ function initCounters() {
 function initContactForm() {
     const form = document.getElementById('contactForm');
     
+    if (!form) return; // Exit if form not found on page
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
@@ -270,7 +274,13 @@ function initContactForm() {
             message: document.getElementById('message').value
         };
         
-        const submitBtn = form.querySelector('.btn-submit');
+        const submitBtn = form.querySelector('.btn-submit-modern') || form.querySelector('.btn-submit');
+        
+        if (!submitBtn) {
+            console.error('Submit button not found');
+            return;
+        }
+        
         const originalText = submitBtn.innerHTML;
         
         // Show loading state
@@ -313,6 +323,8 @@ function initContactForm() {
 // ===== LOAD BLOG POSTS FROM WORDPRESS =====
 async function loadBlogPosts() {
     const blogGrid = document.getElementById('blogGrid');
+    
+    if (!blogGrid) return; // Exit if blog grid not found on page
     
     try {
         // Fetch latest 3 posts from WordPress REST API
