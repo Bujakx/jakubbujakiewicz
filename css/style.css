@@ -524,6 +524,18 @@ body {
     z-index: 10;
 }
 
+.avatars img.avatar-custom {
+    background: linear-gradient(135deg, #0ed145 0%, #09a034 100%);
+    padding: 8px;
+    border-color: #0ed145;
+    box-shadow: 0 0 20px rgba(14, 209, 69, 0.5);
+}
+
+.avatars img.avatar-custom:hover {
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 0 30px rgba(14, 209, 69, 0.8);
+}
+
 .proof-text {
     display: flex;
     flex-direction: column;
